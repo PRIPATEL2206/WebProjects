@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculater</title>
+    <style>
+        .calbox{
+            display: grid;
+            grid-template-rows: 80px auto;
+            /* background-position-x:center; */
+            margin-left: 22%;
+            margin-top: 2%;
+            width: 50%;
+            border-radius: 10px;
+            background-color: white;
+            grid-template-rows: 130px auto;
+            padding: 15px;
+            overflow:auto;
+        }
+        .ansbox{
+            background-color: lightblue;
+            margin: 10px;
+            margin-top: 15px;
+            border-radius: 10px;
+            padding-left: 22px;
+            padding-right: 22px;
+        }
+        .ansbox h3,.ansbox h1{
+            margin-top: 8px;
+            margin-bottom: 8px;
+            font-size: 30px;
+        }
+        .ansbox h1{
+            text-align: right;
+            font-size: 40px;
+        }
+        .buttunsBox{
+            display: grid;
+            grid-template-columns: repeat(5,20%);
+            align-content: center;
+            padding: 40px;
+            padding-top:5px;
+        }
+        .pluse{
+            grid-row-start: 4;
+            grid-row-end: 6;
+            grid-column-start: 4;
+            grid-column-end: 5;
+
+        }
+        button{
+            font-size: 34px;
+            background-color: lightblue;
+            border-collapse: separate;
+            margin: 5px;
+            border-radius: 10px;
+            padding: 20px;
+
+            /* height: 70px; */
+            border: none;
+        }
+        button:hover{
+            background-color: aqua;
+        }
+        
+
+    </style>
+</head>
+<body bgcolor="blue">
+    <div class="calbox">
+        <div class="ansbox">
+             <h3>0</h3>
+             <h1>0</h1>
+         </div>
+         <div class="buttunsBox">
+            
+            <button>(</button>
+            <button>)</button>
+            <button>ans</button>
+            <button>C</button>  
+            <button>CE</button>
+            <button id="b">7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>%</button>
+            <button>^</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>X</button>
+            <button>/</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="pluse">+</button>
+            <button >-</button>
+            <button>.</button>
+            <button>0</button>
+            <button>+/-</button>
+            <button>=</button>
+         </div>
+    </div>
+    <script src="cal.js"></script>
+</body>
+</html>

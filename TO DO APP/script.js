@@ -22,7 +22,7 @@ function saveIt(){
     titleBox.value="";
     discribtionBox.value=""
 
-    if(contentBox.childElementCount==3){
+    if(contentBox.childElementCount==4){
         contentBox.children[0].textContent="Pending Work";  
 
     }
@@ -74,7 +74,7 @@ function openEdit(e){
 function remove(e){
 
     e.parentElement.remove();
-    if(contentBox.children.length==2){
+    if(contentBox.children.length==3){
         contentBox.children[0].textContent="Their is no pending work 🥳🥳";
     }
 }

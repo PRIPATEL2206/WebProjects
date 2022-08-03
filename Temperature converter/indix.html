@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature converter</title>
+
+    <style>
+        *{
+            padding: none;
+            margin: 0px;
+            border-radius: 5px;
+        }
+
+        .main{
+            width: 50%;
+            border-radius: 10px;
+            margin-left: 23%;
+            margin-top:2% ;
+            justify-self: center;
+            display: flex;
+            flex-wrap: wrap;    
+            background-color:aliceblue;
+            padding: 5px;
+            box-shadow: 5px 5px rgba(0, 0, 0, 0.493);
+
+        }
+
+        .heading{
+            font-weight:bolder;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            width: 100%;
+            margin-top: 3%;
+            margin-bottom: 3%;
+        }
+
+        hr{
+            width: 97%;
+            margin: 3px;
+        }
+
+        .d{
+            /* background-color: aqua; */
+            width: 48%;
+            margin: 2% 2.5px 3% 2.5px;
+            padding-left: 2px;
+
+        }
+
+
+        h2{
+            color: rgba(0, 0, 0, 0.555);
+            margin-top: 5px;
+            margin-bottom: 5px;
+            
+        }
+
+
+        input,select{
+            width: 100%;
+            height:50%;
+            border-style: none;
+            font-size:180%;
+            background-color:inherit;
+            accent-color: green;
+        }
+
+        .result{
+            width: 100%;
+        }
+        button{
+            width: 95%;
+            height: 10%;
+            margin: auto 3% auto 3%;
+            font-size: 24px;
+            font-weight: 700;
+            background-color: rgb(57, 167, 112);
+            border-radius: 20px;
+            padding: 20px;
+            color: white;
+            border-style: none;
+            box-shadow: 3px 3px rgba(57, 167, 112, 0.562);
+        }
+
+        button:hover{
+            background-color: rgb(67, 180, 218);;
+            cursor:pointer;
+            color: black;
+        }
+        
+        @media (max-width:600px) {
+            .main{
+                margin: 10px;
+                width: 100%;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="main">
+        <h1 class="heading">Temperature converter</h1>
+        <hr>
+
+        <!-- input -->
+        <div class="d">
+            <h2>Degrees</h2>
+            <input type="number" placeholder="fahrenheit" value="0" >
+            <hr>
+         </div>
+        
+         <!-- type -->
+         <div class="d">
+            <h2>Type</h2>
+            <select id="s">
+                <option class="bg" value="F">fahrenheit</option>
+                <option class="bg" value="C">celsius</option>
+            </select>
+            <hr>
+         </div>
+
+         <!-- result -->
+         <div class="d result">
+            <h2>Result</h2>
+            <h1>0.0 ℃</h1>
+            <hr>
+         </div>
+       
+        <button onclick="displayResult()">converter</button>
+    
+    </div>
+    <script>
+       function displayResult(){
+            var deegee=document.getElementsByTagName("input")[0];
+            var type=document.getElementsByTagName("select")[0];
+            if(type.value=="C"){
+                document.getElementsByTagName("h1")[1].textContent=toFahrenheit(deegee.value)+" ℉";
+            }
+            else{
+                document.getElementsByTagName("h1")[1].textContent=toCelsius(deegee.value)+" ℃";
+            // console.log(document.getElementsByTagName("option")[0].style);  
+              }
+        }
+        function toCelsius(fer){
+            return (fer-32)/1.8;
+        }
+
+        function toFahrenheit(cel){
+            return 1.8*cel+32;
+        }
+    </script>
+</body>
+</html>

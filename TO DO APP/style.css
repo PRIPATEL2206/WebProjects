@@ -127,6 +127,7 @@ body{
     padding-right: 5%;
     flex-wrap: wrap;
     overflow: auto;
+    justify-content: center;
 }
 
 /* midia */

@@ -1,0 +1,85 @@
+.fla{
+    display: flex;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.bgImg{
+    width: 100%;
+  
+}
+.contntener{
+    position:absolute;
+    top: 0;
+    padding: 30px;
+    height: 51vw;
+    width: 96%;
+    /* background-color: beige; */
+}
+
+.playList{
+    height:fit-content;
+    width:fit-content ;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+    border-top:20px ;
+    border-bottom:20px ;
+    border-style:solid;
+    border-color:rgba(240, 248, 255, 0.06) ;
+    max-height: 40vw ;
+    max-width: 50vw;
+    background-color:rgba(240, 248, 255, 0.192); 
+    border-radius: 10px; 
+    padding:4px;
+}
+
+.song{
+    overflow-x: hidden;
+    font-size: 25px;
+    border-radius: 5px;
+    background-color: aqua;
+    padding:3px ;
+    margin: 5px;
+    cursor: pointer;
+
+}
+
+.song:hover{
+    background-color: rgba(0, 255, 255, 0.42);
+}
+
+.playseting{
+    width: 87%;
+    padding: 45px;
+    position:relative;
+    top: 35%;
+}
+
+#musicRange{
+    width: 100%;
+    cursor: pointer;
+}
+
+.masterControl{
+    text-align: center;
+}
+
+.masterIcon{
+    margin: 10px;
+    cursor: pointer;
+    transition-property: width;
+    transition-duration: .2s;
+}
+
+.masterIcon:hover{
+    width: 30px;
+    background-color: rgba(0, 0, 0, 0.193);
+
+}
+#timeDuration{
+    float: right;
+}

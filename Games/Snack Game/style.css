@@ -1,0 +1,40 @@
+body{
+    background-image: url(photo/bG.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+}
+#gameBord{
+    display: grid;
+    /* margin: auto; */
+    border: 2px solid black;
+    margin-left: 18vw;
+    background-color: green;
+    width: 53vw;
+    height: 90vh;
+}
+
+#scoreTag{
+    margin-left: 1vw;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.food{
+    background-image: url(photo/food.png);
+    background-size: cover;
+    /* border-radius: 50%; */
+
+}
+
+.snackHead{
+    background-image: url(photo/snackHead.png);
+    background-size: cover;
+}
+
+.snackBody{
+    background-color: #73b671;
+    border-radius: 40%;
+}
+
+

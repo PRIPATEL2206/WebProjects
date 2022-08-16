@@ -1,30 +1,31 @@
 body{
+    position: relative;
     background-image: url(photo/bG.webp);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:cover;
+    flex-wrap: wrap ;
     display: flex;
 }
 #gameBord{
     display: grid;
-    /* margin: auto; */
     border: 2px solid black;
     margin-left: 18vw;
     background-color: green;
-    width: 53vw;
-    height: 90vh;
+    width: 95vmin;
+    height: 95vmin;
 }
 
 #scoreTag{
+    float: left;
+    clear: right;
     margin-left: 1vw;
-    font-size: 2rem;
+    font-size: 3vmin;
     font-weight: bold;
 }
 
 .food{
     background-image: url(photo/food.png);
     background-size: cover;
-    /* border-radius: 50%; */
-
 }
 
 .snackHead{
@@ -38,3 +39,52 @@ body{
 }
 
 
+.controlBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn{
+    width: 50px;
+    height: 50px;
+    margin: 3px;
+    transition: all .1s;
+
+}
+.rightleftbutton{
+    display: flex;
+    margin: 3px;
+}
+#rightButton{
+    background-image: url(photo/rightErrow.png);
+    background-size: contain;
+    /* margin-left: 60px; */
+}
+
+
+#topButton{
+    background-image: url(photo/topErrow.png);
+    background-size: contain;
+}
+
+#bottomButton{
+    background-image: url(photo/bottomErow.png);
+    background-size: contain;
+}
+
+#leftButton{
+    background-image: url(photo/leftErrow.png);
+    background-size: contain;
+}
+.btn:hover{
+    height: 55px;
+    width: 55px;
+}
+
+
+@media (max-width:777px) {
+    #gameBord{
+        margin-left: 0;
+    }
+}

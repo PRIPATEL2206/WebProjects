@@ -1,15 +1,15 @@
 //add some grid 
 coloms = 18;
 rows = 18;
-gameBord.style["grid-template-columns"] = `repeat(${coloms},1fr)`;
-gameBord.style["grid-template-rows"] = `repeat(${rows},1fr)`;
+gameBord.style["grid-template-columns"] = `repeat(${coloms},${(100 / 18)}%)`;
+gameBord.style["grid-template-rows"] = `repeat(${rows},${(100 / 18)}%)`;
 
 //variables
 let previusTime = 20;
 let delayFram = 200;
-let deg=180;
+let deg = 180;
 let score = 0;
-let nextPosition = { x: 0, y: 1 };
+let nextPosition = { x: 0, y: 0 };
 let snack = [
     { x: 2 + parseInt((coloms - 1) * Math.random()), y: 2 + parseInt((rows - 1) * Math.random()) }
 ];
@@ -26,14 +26,13 @@ function main(stime) {
     if (iscolleps()) {
         alert("Game Over");
         score = 0;
-        deg=180;
-        nextPosition = { x: 0, y: 1 };
+        deg = 180;
+        nextPosition = { x: 0, y: 0 };
         snack = [
             { x: 2 + parseInt((coloms - 1) * Math.random()), y: 2 + parseInt((rows - 1) * Math.random()) }
         ];
         food = { x: 2 + parseInt((coloms - 1) * Math.random()), y: 2 + parseInt((rows - 1) * Math.random()) };
-        scoreTag.textContent = `Score : ${score}`
-        // console.log("Game Over");
+        scoreTag.textContent = `Score : ${score}`;
     }
 }
 
@@ -41,15 +40,56 @@ function main(stime) {
 // funtions
 window.requestAnimationFrame(main);
 
+//move snake
+function moveTop() {
+    if (snack.length > 1) {
+        if (snack[0].x - 1 === snack[1].x) {
+            return;
+        }
+    }
+    nextPosition = { x: -1, y: 0 };
+    deg = 90;
+}
+function moveLeft() {
+    if (snack.length > 1) {
+        if (snack[0].y - 1 === snack[1].y) {
+            return;
+        }
+    }
+    nextPosition = { x: 0, y: -1 };
+    deg = 0;
+}
+
+function moveRight() {
+    if (snack.length > 1) {
+        if (snack[0].y + 1 === snack[1].y) {
+            return;
+        }
+    }
+    nextPosition = { x: 0, y: 1 };
+    deg = 180;
+}
+function moveBottom() {
+    if (snack.length > 1) {
+        if (snack[0].x + 1 === snack[1].x) {
+            return;
+        }
+    }
+    nextPosition = { x: 1, y: 0 };
+    deg = 270;
+}
+
+function stop() {
+    nextPosition = { x: 0, y: 0 };
+}
+
 function iscolleps() {
-    // console.log((snack[0] in snack))
     if (snack[0].x < 0 || snack[0].x > rows || snack[0].y < 0 || snack[0].y > coloms) {
         return true;
     }
     for (let index = 1; index < snack.length; index++) {
-        // const element = snack[index];
         if (snack[0].x === snack[index].x && snack[0].y === snack[index].y) {
-            return true
+            return true;
         }
     }
 
@@ -74,6 +114,9 @@ function gameEngin() {
 
     //change snack 
     for (let index = snack.length - 1; index >= 0; index--) {
+        if (nextPosition.x === 0 && nextPosition.y === 0) {
+            break;
+        }
         if (index === 0) {
             snack[index].x += nextPosition.x;
             snack[index].y += nextPosition.y;
@@ -102,8 +145,8 @@ function gameEngin() {
         let selement = document.createElement("div");
         if (index === 0) {
             selement.classList.add("snackHead");
-            selement.id="snackHead";
-            selement.style.transform=`rotate(${deg}deg)`;
+            selement.id = "snackHead";
+            selement.style.transform = `rotate(${deg}deg)`;
         }
         else {
             selement.classList.add("snackBody");
@@ -117,36 +160,32 @@ function gameEngin() {
 //chack fo key press
 window.addEventListener("keydown", (key) => {
     if (key.key === "s") {
-        alert("Do You Want to Continue");
+        nextPosition = { x: 0, y: 0 };
     }
-    let predeg=deg;
+    let predeg = deg;
     let previusPosition = { ...nextPosition };
     if (key.key === "ArrowUp") {
-        deg=90;
-        // snackHead.style.transform="rotate(90deg)";
-        nextPosition = { x: -1, y: 0 }
+        deg = 90;
+        nextPosition = { x: -1, y: 0 };
     }
     else if (key.code === "ArrowDown") {
-        deg=270;
-        // snackHead.style.transform="rotate(270deg)";
-        nextPosition = { x: 1, y: 0 }
+        deg = 270;
+        nextPosition = { x: 1, y: 0 };
 
     }
     else if (key.code === "ArrowLeft") {
-        deg=0;
-        // snackHead.style.transform="rotate(0deg)";
-        nextPosition = { x: 0, y: -1 }
+        deg = 0;
+        nextPosition = { x: 0, y: -1 };
     }
     else if (key.code === "ArrowRight") {
-        deg=180;
-        // snackHead.style.transform="rotate(180deg)";
-        nextPosition = { x: 0, y: 1 }
+        deg = 180;
+        nextPosition = { x: 0, y: 1 };
 
     }
     if (snack.length > 1) {
         if (snack[0].x + nextPosition.x === snack[1].x && snack[0].y + nextPosition.y === snack[1].y) {
             nextPosition = { ...previusPosition };
-            deg=predeg;
+            deg = predeg;
         }
     }
 })

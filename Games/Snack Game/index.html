@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,15 +8,21 @@
     <title>Snack Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div id="gameBord">
-        <!-- <div class="snackHead"></div>
-        <div class="snackBody"></div>
-        <div class="snackBody"></div>
-        <div class="snackBody"></div>
-        <div class="food"></div> -->
     </div>
     <div id="scoreTag">Score : 0</div>
-<script src="script.js"></script>  
+    <div class="controlBox">
+        <div class="btn" id="topButton" onpointerenter="moveTop()"></div>
+        <div class="rightleftbutton">
+            <div class="btn" id="leftButton" onpointerenter="moveLeft()"></div>
+            <div class="stop btn" onpointerenter="stop()"></div>
+            <div class="btn" id="rightButton" onpointerenter="moveRight()"></div>
+        </div>
+        <div class="btn" id="bottomButton" onpointerenter="moveBottom()"></div>
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    background-image: url(photo/chassBackground.webp);
+    background-size: cover;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.selectBox {
+    display: none;
+    position: absolute;
+    top: 28%;
+    left: 28%;
+    width: 50vmin;
+    height: 43vmin;
+    background-color: rgba(0, 0, 0, 0.966);
+    border:2px solid black ;
+    border-radius: 8px;
+}
+
+select ,select option{
+    width: 100%;
+    height: 25%;
+    font-size:9vmin;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+#addElment {
+    cursor: pointer;
+    margin: auto;
+    margin-top: 21%;
+    width: 50%;
+    font-size: 9vmin;
+    padding: 4px;
+    background-color:rgb(57, 170, 214);
+    border-radius: 5%;
+    text-align: center;
+
+}
+
+#addElment:hover{
+    background-color: rgb(63, 124, 145);
+}
+
+.deletedElementBoxes {
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 95vmin;
+    width: 23vmin;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    /*height: 23vmin;
+    width: 95vmin;
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: repeat(2,1fr); */
+}
+
+.deletedElm {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+
+}
+
+.chassBord {
+    position: relative;
+    margin-top: 10px;
+    border: 10px solid white;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    height: 95vmin;
+    width: 95vmin;
+
+}
+
+.box {
+    cursor: grab;
+    height: 100%;
+    width: 100%;
+    border: 2px solid black;
+    background-size: cover;
+}
+
+.bg-black {
+    background-color: #773509;
+}
+
+.bg-white {
+    background-color: #b3743f;
+}
+
+/* dark element */
+.d-e {
+    background-image: url(photo/darkElefent.png);
+}
+
+.d-h {
+    background-image: url(photo/darkHours.png);
+}
+
+.d-c {
+    background-image: url(photo/darkCamal.png);
+}
+
+.d-q {
+    background-image: url(photo/darkQueen.png);
+}
+
+.d-k {
+    background-image: url(photo/darkKing.png);
+}
+
+.d-s {
+    background-image: url(photo/darkSoldure.png);
+}
+
+/* light element */
+.l-e {
+    background-image: url(photo/lightElefent.png);
+}
+
+.l-h {
+    background-image: url(photo/lightHours.png);
+}
+
+.l-c {
+    background-image: url(photo/lightCamal.png);
+}
+
+.l-q {
+    background-image: url(photo/lightQueen.png);
+}
+
+.l-k {
+    background-image: url(photo/lightKing.png);
+}
+
+.l-s {
+    background-image: url(photo/lightSoldure.png);
+}
+
+.selectedElm {
+    background-color: rgba(201, 193, 79);
+}
+
+.selectedPath {
+    background-color: #89adbb;
+
+}
+
+.canAttackPath {
+    background-color: rgb(255, 0, 0);
+}
+
+@media (max-width:700px){
+    .deletedElementBoxes {
+        height: 23vmin;
+        width: 95vmin;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+}

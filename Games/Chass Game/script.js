@@ -113,7 +113,7 @@ Array.from(allBoxes).forEach((element, index) => {
 
 addElment.addEventListener("click", () => {
     addElement(atIndex, oftype, selectElement.value);
-    currentTurn = oftype;
+    currentTurn = oftype==="l"?"d":"l";
     document.getElementsByClassName("selectBox")[0].style.display = "none";
 
     // delete if exixst in deleted box

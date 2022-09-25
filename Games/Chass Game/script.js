@@ -6,6 +6,7 @@ let currentTurn = "l";
 let oftype;
 let atIndex;
 let selectedPathIndexes = [];
+let kingElephentPath={left:{},right:{}};
 const allElementClasses = [["l-s", "d-s", "l-e", "l-h", "l-c", "l-q", "l-k", "l-c", "l-h", "l-e"], ["d-e", "d-h", "d-c", "d-q", "d-k", "d-c", "d-h", "d-e"]];
 
 //onclick on any box
@@ -568,6 +569,18 @@ function kingPath(index) {
     }
 
     if (leftBoxes > 0 && !allBoxes[index - 1].classList.contains(elementType)) {
+        if(leftBoxes>2 && !allBoxes[index - 2].classList.contains("elm")){
+            if(allBoxes[index - 3].classList.contains(`${elementType}-e`)){
+                returnPath.push(index - 3);
+                kingElephentPath.left={
+                    kingPos:index-2,
+                    elephentPos:index-1
+                }
+            }
+            else if(allBoxes[index - 3].classList.contains(`${elementType}-e`)){
+
+            }
+        }
         returnPath.push(index - 1);
     }
 

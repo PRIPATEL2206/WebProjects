@@ -18,6 +18,8 @@ nav{
 
 .contenner{
     display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 2vw;
     /* background-color: black; */
 }
@@ -73,7 +75,7 @@ nav{
 
 #turn{
     color: white;
-    font-size: 23px;
+    font-size: 3vw;
 }
 
 #exited{

@@ -1,14 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Games</title>
+    <style>
+        .contener {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .row {
+            display: flex;
+
+        }
+
+        .col {
+            margin: 5px;
+            overflow: hidden;
+            border: 2px solid black;
+            border-radius:1vw; 
+            position: relative;
+        }
+
+        img {
+            width:35vw;
+            opacity: .9;
+        }
+        h2{
+            position: absolute;
+            font-size: 2vw;
+            left: 40%;
+            top: 45%;
+            background-color: rgba(0, 0, 0, 0.514);
+            color: white;
+        }
+    </style>
 </head>
+
 <body>
-    <a href="./Chass Game/index.html">Chass Game</a>
-    <a href="./Cross Circule Game/index.html">soon chokadi</a>
-    <a href="./Snack Game/index.html">Snack Game</a>
+
+
+    <div class="contener">
+        <div class="row">
+            <div class="col">
+                <a href="./Chass Game/index.html">
+                    <img src="./Chass Game/photo/chasscover.png" alt="Chass">
+                    <h2>Chass</h2>
+                </a>
+            </div>
+            <div class="col">
+                <a href="./Cross Circule Game/index.html">
+                    <img src="./Cross Circule Game/cross_circule.png" alt="Cross_Curcule">
+                    <h2>Cross Curcule</h2>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="./Snack Game/index.html">
+                <img src="./Snack Game/photo/bG.webp" alt="Snack ">
+                <h2>Snack Game</h2>
+                </a>
+            </div>
+        </div>
+        
+    </div>
 </body>
+
 </html>

@@ -1,16 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ALL MY WEB PROJECTS</title>
+    <style>
+        .contener {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .row {
+            display: flex;
+
+        }
+
+        .col {
+            margin: 5px;
+            overflow: hidden;
+            border: 2px solid black;
+            border-radius:1vw; 
+            position: relative;
+        }
+
+        img {
+            width:35vw;
+            opacity: .9;
+        }
+        h2{
+            position: absolute;
+            font-size: 2vw;
+            left: 40%;
+            top: 45%;
+            background-color: rgba(0, 0, 0, 0.514);
+            color: white;
+        }
+    </style>
 </head>
+
 <body>
-    <a href="./calculater/calculater.html">Calculater</a>
-    <a href="./Games/Games.html">Games</a>
-    <a href="./Music Player/index.html">Music Player</a>
-    <a href="./Temperature converter/indix.html">Tamparature Converter</a>
-    <a href="./TO DO APP/ToDo.html">TODO</a>
+    <div class="contener">
+        <div class="row">
+            <div class="col">
+                <a href="./calculater/calculater.html">
+                    <img src="./calculater/cal.png" alt="CALCULATER">
+                    <h2 >Calculater</h2>
+                </a>
+            </div>
+            <div class="col">
+                <a href="./Games/Games.html">
+                    <img src="./Games/Chass Game/photo/chassBackground.webp" alt="GAMES">
+                    <h2>Games</h2>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="./Music Player/index.html">
+                    <img src="./Music Player/photo/bg.jpeg" alt="MUSIC">
+                    <h2>Music Player</h2>
+                </a>
+            </div>
+            <div class="col">
+                <a href="./Temperature converter/indix.html">
+                    <img src="./Temperature converter/tempraturebg.png" alt="Tamparature_Converter">
+                    <h2>Tamparature Converter</h2>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="./TO DO APP/ToDo.html">
+                    <img src="./TO DO APP/TODO.png" alt="TODO">
+                    <h2>TODO Store</h2>
+                </a>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
